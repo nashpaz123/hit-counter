@@ -1,0 +1,8 @@
+<html>
+    <body>
+	    <h1>The counter has been reset to {{ count }}. Press the GO BACK button (or just go back) to hit the main app. Happy hitting!</h1>
+<form action='/'>
+<button type="button" onclick="window.location.href='{{ url_for( 'hit') }}';">GO BACK</button>
+</form>
+    </body>
+</html>

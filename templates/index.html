@@ -1,0 +1,8 @@
+<html>
+    <body>
+	    <h1>This page has been visited {{ count }} times since deployment. {{ debugTenHits }}</h1>
+<form action='reset/'>
+<button type="button" onclick="window.location.href='{{ url_for( 'reset_hits') }}';">Reset</button>
+</form>
+    </body>
+</html>
