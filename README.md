@@ -25,7 +25,10 @@ Download/pull this repository:
 Go to the newly created directory
 `cd hit-counter`
 
-The docker-compose builds and tags the docker images before running the containers.
+The docker composition builds and tags the docker images before running the containers, unless the image hit-counter_myapp has already been created.
+
+Optional: The image can be created manually by running:
+`docker build -t hit-counter_myapp_1 .`
 
 1. run `docker-compose up -d `
 
@@ -44,9 +47,8 @@ and `docker logs hit-counter_myapp_1`
 
 If you'd like to make changes it's easiest to pipeline your changes like so:
 
-`docker-compose down && docker rmi -f hit-counter_myapp && vim app.py` #This will take down the composition, remove the hit-counter_myapp image, and edit the app file.
-`docker-compose up -d && sleep 2 && curl localhost` #This will bring up the composition, creating the hit-counter_myapp image (because we've removed it in the previous step) and 
+1. `docker-compose down && docker rmi -f hit-counter_myapp && vim app.py` #This will take down the composition, remove the hit-counter_myapp image, and edit the app file.
 
-`docker-compose up -d && sleep 2 && curl localhost` #This will bring up the composition, creating the hit-counter_myapp image (because we've removed it in the previous step) , wait for a couple of shniyot and run sanity.
+2. `docker-compose up -d && sleep 2 && curl localhost` #This will bring up the composition, creating the hit-counter_myapp image (because we've removed it in the previous step) , wait for a couple of shniyot and run sanity.
 
 In a full pipeline the build process can be done in a seperate stage. In prod the docker-compose.yaml file must not contain a build portion.
