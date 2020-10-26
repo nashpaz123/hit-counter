@@ -1,11 +1,11 @@
 # Counter API with Python and Flask
-This repo contains files needed to create an API using Python and Flask, in order to count webpage hits. The application is bundled into a container and deployed to a kubernetes cluster. The backend database is Redis.
+This repo contains files needed to create an API using Python and Flask, in order to count webpage hits. The application is bundled into a container and deployed with docker-compose. The backend database is Redis.
 
 # functionality
 
 Description: Retrives and displays number of hits for the current deployment. Every 10 hits an extra message is displayed. A reset button leads to a reset/ url and resets the counter.
 
-I didn't go into volumes, the data remains in the redis container until it is deleted. I didn't go into a "no refresh" option for the reset, that would have required Ajax and js and started making the reset button extra complicated, but here are some examples: https://stackoverflow.com/questions/42601478/flask-calling-python-function-on-button-onclick-event
+I didn't go into volumes, the data remains in the redis container until it is deleted. I didn't go into a "no refresh" option for the reset, because that would have required Ajax and js and started making the reset button extra complicated, but here are some examples: https://stackoverflow.com/questions/42601478/flask-calling-python-function-on-button-onclick-event
 
 Request:       `GET /`  (Browse to localhost (port 80, not 5000) or in cli run `curl localhost`)
 
